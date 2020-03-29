@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+
+
+
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Capstone Source Archive</title></head>
+<body>
+<div style="text-align: center;"><span style="font-weight: bold; text-decoration: underline;"><big><big>CAPSTONE
+GAMES ARCHIVE</big></big><br>
+<br>
+</span><span style="font-family: Courier;">On this page you can find the complete source code for the following games:<br>
+<br>
+Witchaven<br>
+Witchaven II<br>
+William Shatner's Tekwar<br>
+Corridor 8: Galactic Wars (prototype)<br>
+<br>
+You can also find the following documents:<br>
+<br>
+Corridor 7: Alien Invasion game design document.<br>
+Corridor 7: Alien Invasion strategy guide.<br>
+<br>
+<br>
+I cannot guarantee that the source code will compile. From what I
+remember, the compiler we used to build the games was Watcom C/C++ V9.5
+and the target machine</span><span style="font-family: Courier;"> was
+a 486 50+mhz running&nbsp;MS-DOS V5 or higher.</span><br style="font-family: Courier;">
+<br style="font-family: Courier;">
+<span style="font-family: Courier;">These games were
+released by
+Capstone Software prior to them folding in 1996. As a former Capstone
+programmer I found these developer snapshots in my archives and by popular demand
+I've decided to release it to the hobbyist community in hopes that the
+games will be revived. I do not own the rights to these games. I do not know who
+owns the rights to these games. To the best of my knowledge these
+games are abandonware (or whatever you want to call it).<br>
+<br>
+It's possible that one or both of these scenarios has happened:<br>
+<br>
+1. Someone owns the rights and they don't care about the game anymore.
+Did the owner of IntraCorp keep the assets and then move on to other
+businesses and he just does not care about the games anymore?<br>
+<br>
+2. Someone owns the rights and they don't know they do. Did a bank
+acquire all the assets from IntraCorp? Do they even know what they
+have? Is it on a hard drive on some computer in some storage room?<br style="font-family: Courier;">
+</span>
+<span style="font-weight: bold; font-family: Courier;"></span><span style="font-weight: bold; text-decoration: underline; font-family: Courier;"><span style="text-decoration: underline;"></span><br>
+</span><span style="font-family: Courier;">Please
+note that these
+archives are snapshots of the development folder. Some files are not
+actually used in the retail version of the game. You will have to
+figure out which files they are. In most cases you can just run a batch
+file that will compile the code for you as long as you have the right
+environment set up.</span><br style="font-family: Courier;">
+<br style="font-family: Courier;">
+<span style="font-family: Courier;">Witchaven I source and
+executables (14 mb) - <a href="FILES/WHAVEN.ZIP">WHAVEN.ZIP</a></span><br style="font-family: Courier;">
+<br style="font-family: Courier;">
+<span style="font-family: Courier;">Witchaven II source
+and executables (39 mb) - <a href="FILES/WHAVEN2.ZIP">WHAVEN2.ZIP</a></span><br style="font-family: Courier;">
+<br style="font-family: Courier;">
+<span style="font-family: Courier;">Tekwar source and
+executables (15 mb) - <a href="FILES/TEKWAR.ZIP">TEKWAR.ZIP</a><br>
+<br>
+<span style="font-weight: bold;">Notice: It has been
+reported to me
+that there are viruses in 2 files. DAPI.DOC and DAPI.ZIP. Please clean
+them with virus scanning software before opening them.</span><br style="font-weight: bold;">
+<br>
+</span>
+<hr style="width: 100%; height: 2px;"><span style="font-family: Courier;"><br>
+<span style="font-weight: bold;">UPDATE 9/10/2011</span>:<br>
+<br>
+Just located the design doc for Corridor 7 buried in storage:<br>
+<br>
+<a href="FILES/C7Design.pdf">C7Design.pdf</a> (2.3 MB)<br>
+<br>
+<a href="FILES/C7Design_Revised.pdf">C7Design_Revised.pdf</a> (5.2 MB)<br>
+<br>
+</span>
+<hr style="width: 100%; height: 2px;"><span style="font-family: Courier;"><br>
+<span style="font-weight: bold;">UPDATE 2/14/2012:</span><br>
+<br>
+Scanned in the Corridor 7 Strategy Guide<br>
+<br>
+<a href="FILES/C7Strategy.pdf">C7Strategy.pdf</a> (19.3 MB)<br>
+<br>
+</span>
+<hr style="width: 100%; height: 2px;"><br>
+<span style="font-family: Courier;"><span style="font-weight: bold;">UPDATE 1/18/2013:</span><br>
+<br>
+Added Corridor 8: Galactic Wars source code. This code is for the
+prototype of the sequel to Corridor 7. This prototype was from very
+early in the development process and uses temp art from the game DOOM
+and has only some test maps. For more information see the write up for
+the prototype <a href="http://corridor7.tripod.com/corr8/index.htm" target="_blank">here</a>.<br>
+<br>
+<a href="FILES/c8gwsrc.zip">C8GWSRC.ZIP</a> (9 MB)<br>
+<br>
+</span>
+<hr style="width: 100%; height: 2px;"><br>
+<span style="font-family: Courier;"><span style="font-weight: bold;">UPDATE 2/2/2013:<br>
+<br>
+</span>Scanned in the CD-ROM game manual<br>
+<br>
+<a href="FILES/C7CDManual.pdf">C7CDManual.pdf</a> (8.7 MB)<span style="font-weight: bold;"><br>
+</span>
+</span><br>
+<span style="font-family: Courier;">
+</span><span style="font-family: Courier;">
+</span>
+<hr style="width: 100%; height: 2px;"><br>
+<big><span style="font-family: monospace;"><a href="../default.html">Back</a><br>
+<br>
+July 17, 2014</span></big><br>
+<br>
+<span style="font-family: Courier;"><a href="mailto:lesbird@lesbird.com">email</a><br>
+<br style="font-family: Courier;">
+</span>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57115219-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<div style="position:absolute;filter:alpha(opacity=0);opacity:0.001;z-index:10;"> <a href="http://www.bockhealingcenter.com/"><b>michael kors black friday</b></a> <a href="http://www.budwig.com/"><b>michael kors black friday</b></a> <a href="http://griotcircle.org"><b>michael kors Black Friday</b></a> <a href="https://www.norceca.net/"><b>uggs Black Friday</b></a> <a href="http://iacbe.org"><b>michael kors Black Friday</b></a> <a href="http://www.sdaa.org"><b>michael kors Black Friday</b></a></div></body>
+</html>
