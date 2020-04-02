@@ -1,0 +1,33 @@
+
+How to build Fuel Depot 3D
+
+Directory layout should be as follows:
+
+<project folder>
+  |
+   -- <eng1lib> folder
+  |     |
+         -- eng1lib source files go in here
+  |
+   -- <fueldepot3d> folder
+        |
+         -- fuel depot 3d source files go in here
+        |
+         -- <run> folder
+              |
+               -- copy the game files into this folder
+
+Eng1lib is a DirectX game library written by me for Fuel Depot 3D and also
+used for X and O Football.
+
+When you build a new executable, it will be put into the run directory.
+
+One environment variable is required (DX_ROOT) and should point to the DX8
+SDK folder. See "setup.txt" in the eng1lib folder for more.
+
+Note that I put eng1lib under the LGPL license. You may use it to create your
+own games if you wish using the Fuel Depot 3D code as a basis, however, I
+don't have the time to provide support for it.
+
+Les Bird
+lesbird@lesbird.com
