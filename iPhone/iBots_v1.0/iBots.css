@@ -1,0 +1,26 @@
+/*
+ 
+ File: iBots.css
+ 
+ Abstract: CSS properties for the iBots game
+ 
+ Version: <1.0>
+ 
+ Copyright (C) 2007 Les Bird. All Rights Reserved.
+*/
+
+body
+{
+ text-align:center;
+}
+
+#container
+{
+margin:0 auto;
+width: 320px;
+}
+
+.format
+{
+margin-top: 8px;
+}

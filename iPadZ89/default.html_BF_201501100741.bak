@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head><title>Heathkit H89 Emulator by Les Bird</title></head><body style="background-color: rgb(255, 255, 255);">
+<p align="center"><font face="Courier New" size="5"><strong><u>Heathkit
+H89 Emulator<br>
+</u></strong></font></p>
+
+<p align="center"><font face="Courier New">for the iPad</font></p>
+
+<p align="center"><font face="Courier New">Copyright
+2011 by Les Bird</font></p>
+
+<p align="center"><font face="Courier New"><a href="faq.html" target="_blank">FAQ</a></font></p>
+<p style="font-weight: bold; text-decoration: underline;" align="center"><font face="Courier New">Update 10/15/2012:</font></p>
+<p align="center"><font face="Courier New">Apple would not approve my
+emulator for the App Store because it allows you to run programs from
+the included library of disk images.</font></p>
+<p style="font-weight: bold; text-decoration: underline;" align="center"><font face="Courier New">Update 01/17/2013:</font></p>
+<p align="center"><font face="Courier New">Source code for the iPad Z89 emulator: <a href="iPadZ89Emu.zip">iPadZ89Emu.zip</a> (8 mb)<br>
+</font></p>
+
+
+
+<div align="center">
+<hr> </div>
+
+<br>
+<div style="text-align: center;"><font face="Courier New">The Heathkit
+H89 Emulator for the iPad includes the HDOS 3.0 operating system and
+most of the original HUG library. This app emulates the Heathkit H89
+8-bit computer from the early 80s. For more information on the Heathkit
+H89 computer system visit the <a href="../sebhc/index.html" target="_blank">SEBHC</a> website.<br>
+<br>
+To familiarize yourself with the HDOS 3 operating system, download the PDF manual here:<br>
+<a href="../sebhc/documentation/software/HDOS-3/HDOS_3_02_Reference_Manual.pdf" target="_blank">HDOS 3 Reference Manual</a><br>
+<br>
+This reference manual is also included with the iPad app.<br>
+<br>
+</font>
+<hr style="width: 100%; height: 2px;"><font face="Courier New"><br>
+<span style="text-decoration: underline;">HOW TO USE THE EMULATOR</span><br>
+<br>
+When you first launch the app you will see the Heathkit prompt (H:) at
+the top of the screen. The system has been booted to the ROM and is
+awaiting further commands. From here you want to select one of the
+included disk images and boot to the operating system.<br>
+<br><span style="text-decoration: underline;">
+SELECT A DISK IMAGE</span><br>
+<br>
+Tap anywhere in the upper part of the screen to view the included disk images:<br>
+<br>
+</font><img style="width: 512px; height: 384px;" alt="Heathkit H89 emulator for the iPad" src="screenshots/screen2.png"><br>
+<br>
+<font face="Courier New">Scroll the list by swiping up or down.<br>
+<br>
+Tap on the floppy drive button labeled <span style="font-weight: bold;">SY0:</span> then tap on a disk image to insert into the emulated drive.<br>
+<br>
+<span style="text-decoration: underline;">BOOT TO THE HDOS OS</span><br>
+<br>
+<span style="font-weight: bold;">Important note:</span> When you boot a
+distribution image for the first time it will appear that nothing is
+happening. You will see the H: prompt with a blinking cursor. The HDOS
+operating system is in the autobaud detect mode. Just tap the <span style="font-weight: bold;">SPACEBAR</span>
+on the keyboard a few times to continue the boot process.<br>
+<br>
+To start off let's scroll down the list and select the <span style="font-weight: bold;">HDOS_3-02_1_System.h8d</span> disk image by tapping on it. Tap on the <span style="font-weight: bold;">DONE</span> button to close the disk image library and then tap the <span style="font-weight: bold;">BOOT</span>
+button to boot the emulator into the HDOS 3 operating system. You'll be
+asked to enter the current date.<br>
+<span style="font-weight: bold;"><br>
+Important node:</span> The HDOS
+operating system is not Y2K compliant so you cannot enter a year that
+is higher than 1999.<br>
+<br>
+<img style="width: 512px; height: 384px;" alt="HDOS 3 boot screen" src="screenshots/screen7.png"><br>
+<br>
+After you type in a date (or just tap <span style="font-weight: bold;">RETURN</span> to use the default) you will see the HDOS 3 prompt which looks like this:<br>
+<br>
+<span style="font-weight: bold;">S:</span><br>
+<br>
+HDOS is now waiting for commands. The first thing to do is configure
+HDOS for the type of terminal we are emulating, which is a Heathkit
+H19. Do this by typing in the following command:<br>
+<br>
+<span style="font-weight: bold;">SET TT: H19</span><br>
+<br>
+Then press <span style="font-weight: bold;">RETURN</span>. Now restart HDOS by typing in the following:<br>
+<br>
+<span style="font-weight: bold;">BYE</span><br>
+<br>
+After you see the logoff screen tap the <span style="font-weight: bold;">RESET</span> button then tap the <span style="font-weight: bold;">BOOT</span> button. You should now see a boot screen that looks like this:<br>
+<br>
+</font><img style="width: 512px; height: 384px;" alt="Heathkit H89 emulator for the iPad" src="screenshots/screen3.png"><br>
+<br>
+<font face="Courier New">From the HDOS 3 prompt (S:) you can enter in
+any HDOS 3 command (see the reference manual) or execute one of the
+programs on the disk. All HDOS programs have an extension of .ABS and
+can be run directly from the prompt. Just type the program name and
+press the <span style="font-weight: bold;">RETURN</span> key.<br>
+<br>
+I've included some shortcut buttons for some of the more common HDOS commands. These are labeled <span style="font-weight: bold;">MOUNT</span>, <span style="font-weight: bold;">DIR</span>, <span style="font-weight: bold;">SET</span>, <span style="font-weight: bold;">SY0:</span>, <span style="font-weight: bold;">SY1:</span> and <span style="font-weight: bold;">SY2:</span>.
+When you are at the S: prompt you can tap one of these shortcut buttons
+and the command will be typed in for you. As an example, to get a
+directory listing for the disk image in drive <span style="font-weight: bold;">SY1:</span> you can tap the <span style="font-weight: bold;">DIR</span> button followed by the <span style="font-weight: bold;">SY1:</span> button and then press the <span style="font-weight: bold;">RETURN</span> key.<br>
+<br>
+There's a slide switch at the bottom of the screen labeled <span style="font-weight: bold;">2MHz</span>. By default this switch is in the <span style="font-weight: bold;">OFF</span>
+position. This means the emulation is running as fast as the iPad can
+run it, which is pretty fast. Most of the time you probably want to
+leave this switch in the <span style="font-weight: bold;">OFF</span> position but if you are playing any of the games you'll want to switch it <span style="font-weight: bold;">ON</span>. Sliding this switch to the <span style="font-weight: bold;">ON</span>
+position will do two things. First, it will slow the emulator down to
+run at approximately 2MHz which is close to the speed of the real
+computer. Second it will turn off all filtering for the fonts so that
+graphic characters will look correct.<br>
+<br><span style="text-decoration: underline;">
+HOW THE DISK IMAGE LIBRARY WORKS</span><br>
+<br>
+To view the disk image library just tap anywhere in the upper part of
+the screen. The disk image library is split into 2 categories called <span style="font-weight: bold;">My Images</span> and <span style="font-weight: bold;">Distribution</span>.
+The distribution section are disk images in their factory supplied
+condition. These images are exact copies of the disks that you would
+get from the factory, never booted and never written to. Once a disk
+image is written to or used in anyway, it is copied and added to the <span style="font-weight: bold;">My Images</span> section. You can delete any disk image from the <span style="font-weight: bold;">My Images</span> section by swiping it and tapping on the <span style="font-weight: bold;">DELETE</span> button. You can never delete or write to a disk image that is in the <span style="font-weight: bold;">Distribution</span> section. These are permanent unalterable backups.<br>
+<br>
+There are 3 emulated floppy drives labeled <span style="font-weight: bold;">SY0:</span>, <span style="font-weight: bold;">SY1:</span> and <span style="font-weight: bold;">SY2:</span>. In most cases you want to insert a bootable operating system disk image into the <span style="font-weight: bold;">SY0:</span> drive. You can then insert another disk in <span style="font-weight: bold;">SY1:</span> or <span style="font-weight: bold;">SY2:</span> and access it from the operating system. Do this by first mounting the disk from the HDOS S: prompt like this:<br>
+<br>
+S: <span style="font-weight: bold;">MOUNT SY1:</span><br>
+<br>
+But before you can do this you have to select a disk image and insert
+it into the drive. Tap in the upper part of the screen to pull up the
+disk image library then tap one of the drive letters, <span style="font-weight: bold;">SY1:</span> or <span style="font-weight: bold;">SY2:</span>,
+then tap on a disk image to insert into that drive. Now you can mount
+the disk using the above command and access it's contents from the HDOS
+operating system.<br>
+<br>
+For a thorough description of the HDOS 3 operating system, read the included reference manual.<br>
+<br>
+<br>
+</font></div>
+<hr style="width: 100%; height: 2px;"><br>
+<div style="text-align: center;"><font face="Courier New">January 17, 2013</font></div>
+
+<p align="center"><font face="Courier New"><a href="mailto:lesbird@lesbird.com">e-mail</a></font></p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57115219-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<div style="position:absolute;filter:alpha(opacity=0);opacity:0.001;z-index:10;"> <a href="http://modernscientificpress.com"><b>michael kors Black Friday</b></a> <a href="http://www.glangels.org/"><b>michael kors black friday</b></a> <a href="http://canyonlawoffice.com/"><b>michael kors black friday</b></a> <a href="http://www.iztechnologies.net/"><b>michael kors black friday</b></a> <a href="http://mojmalipravnik.net"><b>coach black friday</b></a> <a href="http://tailwheelbasics.com/"><b>michael kors black friday</b></a></div></body>
+</html>
