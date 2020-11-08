@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Levitar 3D Evolved Online High Scores</title>
+</head>
+<body>
+<div style="text-align: center;">
+<span style="font-weight: bold; text-decoration: underline;">THE GAME PROJECTS<br><br></span>
+<span style="font-weight: bold;">LEVITAR 3D: EVOLVED ONLINE HIGH SCORES<br></span>
+<br>
+<hr>
+<span style="font-family: Courier New; text-decoration: underline;"><br>
+RANK&nbsp;&nbsp;NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SCORE&nbsp;&nbsp;LEVEL&nbsp;&nbsp;RATING<br>
+</span>
+<br>
+<span style="font-family: Courier New;">
+&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;Thadeus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1810479&nbsp;&nbsp;&nbsp;E4M6&nbsp;&nbsp;&nbsp;0.90%<br>
+&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;Injector&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1680610&nbsp;&nbsp;&nbsp;E4M6&nbsp;&nbsp;&nbsp;0.96%<br>
+&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;Tadeu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1584491&nbsp;&nbsp;&nbsp;E4M5&nbsp;&nbsp;&nbsp;0.87%<br>
+&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;Tadeu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1461756&nbsp;&nbsp;&nbsp;E4M3&nbsp;&nbsp;&nbsp;0.90%<br>
+&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;Major&nbsp;West&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1362311&nbsp;&nbsp;&nbsp;E4M6&nbsp;&nbsp;&nbsp;0.98%<br>
+&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;Slayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;422454&nbsp;&nbsp;&nbsp;E2M6&nbsp;&nbsp;&nbsp;0.94%<br>
+&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;laZer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;384345&nbsp;&nbsp;&nbsp;E2M3&nbsp;&nbsp;&nbsp;0.96%<br>
+&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;Survivor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;383004&nbsp;&nbsp;&nbsp;E2M2&nbsp;&nbsp;&nbsp;0.95%<br>
+&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;Player&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;271768&nbsp;&nbsp;&nbsp;E2M2&nbsp;&nbsp;&nbsp;0.97%<br>
+&nbsp;&nbsp;10&nbsp;&nbsp;Das&nbsp;Idol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;265641&nbsp;&nbsp;&nbsp;E1M6&nbsp;&nbsp;&nbsp;0.98%<br>
+&nbsp;&nbsp;11&nbsp;&nbsp;Delgan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;199350&nbsp;&nbsp;&nbsp;E1M5&nbsp;&nbsp;&nbsp;1.00%<br>
+&nbsp;&nbsp;12&nbsp;&nbsp;Riddick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;172605&nbsp;&nbsp;&nbsp;E1M4&nbsp;&nbsp;&nbsp;0.96%<br>
+&nbsp;&nbsp;13&nbsp;&nbsp;Xenofur&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;121610&nbsp;&nbsp;&nbsp;E2M5&nbsp;&nbsp;&nbsp;0.99%<br>
+&nbsp;&nbsp;14&nbsp;&nbsp;Dominic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;119634&nbsp;&nbsp;&nbsp;E1M3&nbsp;&nbsp;&nbsp;0.98%<br>
+&nbsp;&nbsp;15&nbsp;&nbsp;Mef&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;89250&nbsp;&nbsp;&nbsp;E1M3&nbsp;&nbsp;&nbsp;1.00%<br>
+&nbsp;&nbsp;16&nbsp;&nbsp;Lupus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77500&nbsp;&nbsp;&nbsp;E2M4&nbsp;&nbsp;&nbsp;1.00%<br>
+&nbsp;&nbsp;17&nbsp;&nbsp;MM&nbsp;Killer&nbsp;Pcc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;74570&nbsp;&nbsp;&nbsp;E3M1&nbsp;&nbsp;&nbsp;0.98%<br>
+&nbsp;&nbsp;18&nbsp;&nbsp;John&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;58991&nbsp;&nbsp;&nbsp;E1M3&nbsp;&nbsp;&nbsp;0.99%<br>
+&nbsp;&nbsp;19&nbsp;&nbsp;Player&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;47161&nbsp;&nbsp;&nbsp;E4M2&nbsp;&nbsp;&nbsp;0.91%<br>
+&nbsp;&nbsp;20&nbsp;&nbsp;benz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24408&nbsp;&nbsp;&nbsp;E1M3&nbsp;&nbsp;&nbsp;0.96%<br>
+&nbsp;&nbsp;21&nbsp;&nbsp;Player&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11950&nbsp;&nbsp;&nbsp;E1M2&nbsp;&nbsp;&nbsp;0.33%<br>
+&nbsp;&nbsp;22&nbsp;&nbsp;Iago&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8000&nbsp;&nbsp;&nbsp;E1M2&nbsp;&nbsp;&nbsp;0.98%<br>
+&nbsp;&nbsp;23&nbsp;&nbsp;Dam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7000&nbsp;&nbsp;&nbsp;E1M1&nbsp;&nbsp;&nbsp;0.86%<br>
+&nbsp;&nbsp;24&nbsp;&nbsp;Player&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1500&nbsp;&nbsp;&nbsp;E1M1&nbsp;&nbsp;&nbsp;1.00%<br>
+&nbsp;&nbsp;25&nbsp;&nbsp;Player&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500&nbsp;&nbsp;&nbsp;E1M1&nbsp;&nbsp;&nbsp;1.00%<br>
+</span>
+<br>
+<hr>
+<br>
+<span style="font-family: Courier New;">
+<a href="http://www.lesbird.com/levitar3/default.html">Levitar 3D: Evolved Home Page</a><br>
+</span>
+<br>
+<span style="font-family: Courier New;">
+Sat&nbsp;Jul&nbsp;19&nbsp;10:47:35&nbsp;2008
+<br>
+</span>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57115219-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<div style="position:absolute;filter:alpha(opacity=0);opacity:0.001;z-index:10;"> <a href="http://www.dianneramponi.com/"><b>michael kors black friday</b></a> <a href="http://www.healthcaretraininginstituteofamerica.com"><b>michael kors Black Friday</b></a> <a href="http://www.ccaestate.org"><b>michael kors Black Friday</b></a> <a href="http://www.qisalon.com/"><b>michael kors black friday</b></a> <a href="http://www.cleanyourbike.com"><b>michael kors Black Friday</b></a> <a href="http://stpauls.me/"><b>michael kors black friday</b></a></div></body>
+</html>

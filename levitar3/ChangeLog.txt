@@ -1,0 +1,110 @@
+Levitar 3D: Evolved Change Log
+==============================
+
+Nov 1, 2006 V1.01
+- First official release.
+
+Nov 2, 2006 V1.02
+- Fixed performance bug. Some objects repeated in the level files causing them to load multiple times.
+
+Nov 3, 2006 V1.03
+- Added configurable keyboard feature. Press F1 for help screen then F2 to configure keyboard.
+
+Nov 4, 2006 V1.04
+- Rewrote mesh rendering function. No longer uses D3DXEffect files.
+- Optimized render state changes.
+- Gained about 10fps.
+- Added keyboard acknowledgement for logo screens, stat screen and end-of-level bonus screen.
+- Removed shadows for girders on level 4 which caused large frame rate hit.
+
+Nov 4, 2006 V1.05
+- Fixed lock-out for Episode 2 Mission 1 when Episode 1 Mission 6 completed.
+
+Nov 5, 2006 V1.06
+- Fixed bug on level 6 when transporting unknown object it could indicate a failed mission if it swings out too far.
+- Added configurable gamepad buttons.
+
+Nov 5, 2006 V1.07
+- Added "no detail" setting in graphics detail. Turns off bump mapping. Now 50-60fps on a P4 3ghz w/Intel integrated video.
+
+Nov 6, 2006 V1.07
+- Tweaked the joy/key configuration.
+- Added releasing of logo screens from memory when done with them.
+
+Nov 8-10, 2006 V1.08
+- Added Gamma settings (F7-darken, F8-brighten).
+- Player projectiles match ship velocity better.
+- Fixed bug in ray trace code where I wasn't passing in sqrt() of len.
+- Adjusted the mission description text position for widths of less than 1280.
+- Adjusted the landing hud positioning.
+- Added F1, F4 and F5 for Pjio.com in-game settings.
+- Made D3D8 device creation less restrictive and more compatible.
+
+Nov 10-18, 2006 V1.10
+- Added displaying of current episode and mission.
+- Fixed bug when adding generic object with no collision.
+- Added displaying of transport message when object other than enemy has technology.
+- Added displaying of "technology" message for objects other than enemy.
+- Combined all WorldToScreen text printing into a single function.
+- Added nearby tunnels and tubes translucent when inside one.
+- Added movable platforms for getting to secret areas.
+- Added sleeping enemies which can be activated by killing another.
+- Fixed leaked memory when cleaning up level.
+- Static Gun now works on airborne objects (UFOs, Generators).
+- Added online high scores.
+- Tweaked the static gun fuel consumption rate.
+- Completed episode 2 missions.
+
+Nov 19, 2006 V1.11
+- Fixed small bug in high score reporting.
+
+Nov 19, 2006 V1.12
+- Fixed broken collector particles.
+
+Nov 19, 2006 V1.13
+- Fixed another high score bug.
+
+Nov 20, 2006 V1.14
+- Added displaying of pilot rating in online high score list.
+- Removed the auto display of gamepad layout when new item unlocked.
+
+Nov 20, 2006 V1.15
+- Fixed bug in player rating on high score chart.
+
+Nov 21-23, 2006 V1.16
+- Fixed bug where if you run out of fuel and land safely the game won't end.
+- Can now tractor multiple generic objects as long as they have technology.
+- Fixed occasional crash bug when game over and re-entering mission again.
+- Added if player impact speed is high enough explodes immediately instead of delay.
+- Optimized visibility flag variable lookup.
+- Locks players last position when game over.
+
+Nov 24-Dec 17, 2006 V1.20
+- Episode 3
+- Added new enemy: the Battle Cruiser
+- Added new enemy: the Super Cannon
+- Added gamepad axis swapping for left and right sticks.
+- Added radar mode key
+- Fixed crashes when no sound device is detected
+- Fixed translucency issues when inside structures
+- Added plane clipping when inside structures for better visibility
+- Optimized AI code
+
+Dec 18-Jan 13, 2007 V1.21
+- Episode 4
+- Made available video modes more compatible with HDTV displays (720p)
+- Made respawning safer when ufo's are around
+- Changed projectile trails to follow fired direction instead of direction of travel
+- Fixed bug where sometimes new technology would not get researched when collected
+- Added triggers to control platforms based on a kill or radius
+- Idle ufos are now awakened when player is close by
+- Added screen shake for nearby explosions
+
+Jan 13, 2007 V1.22 (maintenance)
+- Minor visual change in Venus (episode 4) terrain - took out the shiny surface
+- Removed some unused art
+- Added tractorbeam'd objects can now trigger proximity platforms
+
+Jan 20-Jan 24, 2007 V1.23
+- Added highlighting of newly acquired inventory items
+- Added display of terrain in radar screen
