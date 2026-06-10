@@ -1,167 +1,548 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Game Projects by Les Bird — iOS games, PC games, MAME and Magic Leap projects, and classic computing.">
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57115219-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-57115219-1');
 </script>
 
-<title>The Game Projects</title>
+<title>The Game Projects — Les Bird</title>
+
 <style>
-body
-{
-font-family:courier,serif
+:root{
+  --bg:#0b0e16;
+  --bg-soft:#121726;
+  --card:#161c2c;
+  --card-hover:#1c2436;
+  --border:#283149;
+  --text:#e6e9f2;
+  --muted:#97a0bd;
+  --accent:#39e6b5;
+  --accent-2:#6aa8ff;
+  --shadow:0 10px 30px rgba(0,0,0,.45);
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
 }
 
-.box {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(106,168,255,.10), transparent 60%),
+    radial-gradient(1000px 500px at -10% 10%, rgba(57,230,181,.10), transparent 55%),
+    var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
 }
 
-.iosgame {
-	margin: 10px;
-}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{color:var(--accent)}
 
-.iosimage {
-	width: 300px;
+/* ---------- top nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;gap:18px;
+  padding:12px clamp(16px,4vw,40px);
+  background:rgba(11,14,22,.72);
+  backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid var(--border);
 }
+.nav .brand{
+  font-weight:800;letter-spacing:.5px;color:var(--text);
+  margin-right:auto;white-space:nowrap;
+}
+.nav .brand span{color:var(--accent)}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap}
+.nav-links a{
+  font-size:.82rem;color:var(--muted);
+  padding:6px 10px;border-radius:8px;font-family:var(--mono);
+}
+.nav-links a:hover{color:var(--text);background:var(--bg-soft)}
 
+/* ---------- hero ---------- */
+.hero{
+  text-align:center;
+  padding:clamp(40px,8vw,84px) 20px 40px;
+  max-width:900px;margin:0 auto;
+}
+.hero img{
+  max-width:min(560px,90%);height:auto;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+.hero h1{
+  font-size:clamp(2rem,5vw,3rem);
+  margin:.6em 0 .2em;line-height:1.1;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:620px;margin:0 auto}
+
+/* ---------- sections ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+section{padding:46px 0;border-top:1px solid var(--border)}
+.section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.section-head h2{
+  font-size:clamp(1.4rem,3.2vw,2rem);margin:0;letter-spacing:.5px;
+}
+.section-head .kicker{
+  font-family:var(--mono);font-size:.78rem;color:var(--accent);
+  text-transform:uppercase;letter-spacing:2px;
+}
+.section-head p{margin:0;color:var(--muted);font-size:.95rem;flex-basis:100%}
+
+/* ---------- card grid ---------- */
+.grid{
+  display:grid;gap:20px;
+  grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+}
+.card{
+  display:flex;flex-direction:column;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent);
+  box-shadow:var(--shadow);
+}
+.card-media{
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,#0e1320,#0a0d15);
+  aspect-ratio:4/3;overflow:hidden;
+}
+.card-media img{
+  max-width:100%;max-height:100%;width:auto;height:auto;
+  object-fit:contain;display:block;
+  transition:transform .25s ease;
+}
+.card:hover .card-media img{transform:scale(1.04)}
+.card-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-body h3{margin:0;font-size:1.02rem;line-height:1.25}
+.card-body h3 a{color:var(--text)}
+.card-body h3 a:hover{color:var(--accent)}
+.card-links{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+.pill{
+  font-family:var(--mono);font-size:.74rem;
+  padding:5px 10px;border-radius:999px;
+  border:1px solid var(--border);color:var(--muted);
+}
+.pill:hover{border-color:var(--accent);color:var(--accent)}
+.pill.solid{background:var(--accent);color:#06281f;border-color:transparent;font-weight:700}
+.pill.solid:hover{filter:brightness(1.08);color:#06281f}
+
+/* ---------- simple link list ---------- */
+.linklist{
+  display:grid;gap:12px;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+}
+.linkrow{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 16px;background:var(--card);
+  border:1px solid var(--border);border-radius:12px;
+  transition:border-color .18s ease,background .18s ease;
+}
+.linkrow:hover{border-color:var(--accent-2);background:var(--card-hover)}
+.linkrow .dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent);flex:none;box-shadow:0 0 10px var(--accent);
+}
+.linkrow a{color:var(--text);font-weight:600}
+.linkrow span{color:var(--muted);font-size:.85rem}
+.linkrow:hover a{color:var(--accent)}
+
+.banner-card{
+  display:block;border:1px solid var(--border);border-radius:14px;
+  overflow:hidden;background:var(--card);margin-top:16px;max-width:680px;
+  transition:border-color .18s ease,transform .18s ease;
+}
+.banner-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.banner-card img{width:100%;height:auto;display:block}
+.banner-card .cap{padding:12px 16px;color:var(--text);font-weight:600}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--border);
+  margin-top:30px;padding:40px 20px 60px;text-align:center;
+}
+.footer-links{display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;margin-bottom:18px}
+.footer-links a{font-family:var(--mono);font-size:.85rem}
+footer .meta{color:var(--muted);font-size:.85rem;font-family:var(--mono)}
+
+#disqus_thread{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 40px}
 </style>
 </head>
 
-<!-- comment -->
-
 <body>
-<center>
-<img border="1" src="https://lesbird.github.io/images/les_bird_logo_v2.jpg" alt="lesbird.com" width="640" height="146"><br>
-<br>
-Welcome to <b>The Game Projects</b> website where you can find some simple games that I've made as well as some hobby related projects.
-</center>
-<hr>
-<center>
-<h3>MAME related projects</h3>
-<img src="https://lesbird.github.io/images/125208mame.jpg" width="256" height="192"><br>
-<br>
-<a href="https://lesbird.github.io/mame4jetson.html">MAME for the NVIDIA Jetson TX2</a><br>
-<a href="https://lesbird.github.io/mame4apple.html">MAME for iOS devices</a><br>
-<br>
-<hr>
-<h3>Magic Leap Projects</h3>
-<a href="https://lesbird.github.io/universecreator.html">Universe Creator<br>
-<img src="https://lesbird.github.io/magicleap/screens/1.png" width="256" height="192"></a><br>
-<br>
-<a href="https://lesbird.github.io/sattracker.html">Satellite Tracker AR<br>
-<img src="https://lesbird.github.io/magicleap/screens/STAR.png" width="256" height="192"></a><br>
-<hr>
-<h3>iOS Games</h3>
-<!-- <div class="box"> -->
-<img src="https://lesbird.github.io/images/apple-app-store-icon.png"><br>
-<br>
-<a href="https://lesbird.github.io/AxPerf.zip">Ax Performance Test (OS X x64 / Apple M1)</a><br>
-<a href="https://lesbird.github.io/AxPerfM1Native.zip">Ax Performance Test (Apple M1 Native)</a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id1554379441">Super Starship<br>
-<img src="https://lesbird.github.io/Screenshots/2732x2048bb-4-small.png"></a><br>
-	<a href="https://superstarshipgame.com">Website</a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id1543714470">Astrocave<br>
-<img src="https://lesbird.github.io/Screenshots/Screenshot004.png" width="192" height="256"></a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id1534481764">Ax Performance Test (iOS on the App Store)<br>
-<img src="https://lesbird.github.io/Screenshots/axperftest.png" width="256" height="192"></a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id1502033501">Bust-A-Bubble<br>
-<img src="https://lesbird.github.io/Screenshots/bustabubble.png" width="192" height="256"></a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id448002032">Emerald Mine<br>
-<img src="https://lesbird.github.io/Screenshots/emeraldmine.png" width="256" height="192"></a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id398917207">iBots<br>
-<img src="https://lesbird.github.io/Screenshots/ibots.png" width="192" height="256"></a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id1526953513">Letter Wizard<br>
-<img src="https://lesbird.github.io/Screenshots/letterwizard.png" width="192" height="256"></a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id1551682313">Letter Wizard Word Search<br>
-<img src="https://lesbird.github.io/Screenshots/letterwizardsearch.png" width="192" height="256"></a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id1327884310">Levitar Rescue<br>
-<img src="https://lesbird.github.io/Screenshots/levitarrescue.png" width="256" height="192"></a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id1510419801">Levitar Vector 3<br>
-<img src="https://lesbird.github.io/Screenshots/levitarvector3.png" width="256" height="192"></a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id1390864442">Physics Box<br>
-<img src="https://lesbird.github.io/Screenshots/physicsbox.png" width="192" height="256"></a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id1080209122">Rocks'n'Diamonds<br>
-<img src="https://lesbird.github.io/Screenshots/rocksndiamonds.png" width="256" height="192"></a><br>
-<br>
-<a href="https://apps.apple.com/us/app/id463239188">X vs O Football<br>
-<img src="https://lesbird.github.io/Screenshots/xvsofootball.png" width="256" height="192"></a><br>
-<!-- </div> -->
-<hr>
-<h3>PC Freeware Games</h3>
-<a href="levitar3.html">Levitar 3D: Evolved<br>
-<img src="https://lesbird.github.io/levitar3/images/Image62.jpg" width="256" height="192"></a><br>
-<br>
-<a href="eliminator3d.html">Eliminator 3D<br>
-<img src="https://lesbird.github.io/Eliminator3D/Images/Image94_640.jpg" width="256" height="192"></a><br>
-<br>
-<a href="fueldepot3d.html">Fuel Depot 3D<br>
-<img src="https://lesbird.github.io/fueldepot3d/ScreenShots/Image1.jpg" width="256" height="192"></a><br>
-<br>
-<hr>
-<h3>PC Retail Games</h3>
-<a href="https://en.wikipedia.org/wiki/Star_Trek:_The_Next_Generation:_Klingon_Honor_Guard">Klingon Honor Guard - Microprose</a><br>
-<br>
-<a href="https://www.mobygames.com/game/hot-wheels-mechanix">Hot Wheels Mechanix Racing - AWE Games</a><br>
-<br>
-<a href="https://lesbird.github.io/kndoperationbest.html">Kids Next Door - Operation B.E.S.T. - AWE Games<br>
-<img src="https://lesbird.github.io/images/knd_best.jpg" width="192" height="256"></a><br>
-<br>
-<hr>
-<h3>Classic PC Games</h3>
-<a href="https://en.wikipedia.org/wiki/Corridor_7:_Alien_Invasion">Corridor 7: Alien Invasion - Capstone</a><br>
-<br>
-<a href="https://en.wikipedia.org/wiki/William_Shatner%27s_TekWar">William Shatner's Tekwar</a><br>
-<br>
-<a href="https://en.wikipedia.org/wiki/Witchaven">Witchaven</a><br>
-<br>
-<a href="https://en.wikipedia.org/wiki/Witchaven_II:_Blood_Vengeance">Witchaven II</a><br>
-<br>
-<hr>
-<h3>Classic Computers</h3>
-	<a href="https://sebhc.github.io/sebhc/">SEBHC (Society of Eight Bit Heath Computerists)</a><br>
-<br>
-<a href="https://lesbird.github.io/galacticomm.html">Galacticomm BBS Software<br>
-<img src="https://lesbird.github.io/Galacticomm/galacticommbanner.jpg" width="640" height="160"></a><br>
-</center>
-<hr>
 
-<p>
-<center>
-Mar 22, 2021<br>
-<br>
-<a href="mailto:lesbird65@gmail.com">email</a><br>
-<br>
-<a href="https://sebhc.github.io/sebhc/" target="_blank">SEBHC classic computers</a><br>
-<br>
-<a href="https://lesbird.github.io/capstone/index.html">CAPSTONE software archive</a><br>
-<br>
-<a href="https://lesbird.github.io/privacy.html">PRIVACY POLICY</a><br>
-</center>
-</p>
+<nav class="nav">
+  <div class="brand">The Game <span>Projects</span></div>
+  <div class="nav-links">
+    <a href="#ios">iOS Games</a>
+    <a href="#pc">PC Games</a>
+    <a href="#mame">MAME</a>
+    <a href="#magicleap">Magic Leap</a>
+    <a href="#classic">Classic</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="https://lesbird.github.io/images/les_bird_logo_v2.jpg" alt="Les Bird">
+  <h1>The Game Projects</h1>
+  <p>Simple games I've built over the years, along with a handful of hobby projects spanning iOS, PC, MAME, AR, and classic computing.</p>
+</header>
+
+<main class="wrap">
+
+  <!-- ===================== iOS GAMES ===================== -->
+  <section id="ios">
+    <div class="section-head">
+      <span class="kicker">App Store</span>
+      <h2>iOS Games</h2>
+      <p>A growing collection of games available on the Apple App Store, plus a couple of desktop performance builds.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id1554379441">
+          <img src="https://lesbird.github.io/Screenshots/2732x2048bb-4-small.png" alt="Super Starship" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id1554379441">Super Starship</a></h3>
+          <div class="card-links">
+            <a class="pill solid" href="https://apps.apple.com/us/app/id1554379441">App Store</a>
+            <a class="pill" href="https://superstarshipgame.com">Website</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id1543714470">
+          <img src="https://lesbird.github.io/Screenshots/Screenshot004.png" alt="Astrocave" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id1543714470">Astrocave</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id1543714470">App Store</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id1534481764">
+          <img src="https://lesbird.github.io/Screenshots/axperftest.png" alt="Ax Performance Test" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id1534481764">Ax Performance Test</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id1534481764">App Store</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id1502033501">
+          <img src="https://lesbird.github.io/Screenshots/bustabubble.png" alt="Bust-A-Bubble" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id1502033501">Bust-A-Bubble</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id1502033501">App Store</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id448002032">
+          <img src="https://lesbird.github.io/Screenshots/emeraldmine.png" alt="Emerald Mine" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id448002032">Emerald Mine</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id448002032">App Store</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id398917207">
+          <img src="https://lesbird.github.io/Screenshots/ibots.png" alt="iBots" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id398917207">iBots</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id398917207">App Store</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id1526953513">
+          <img src="https://lesbird.github.io/Screenshots/letterwizard.png" alt="Letter Wizard" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id1526953513">Letter Wizard</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id1526953513">App Store</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id1551682313">
+          <img src="https://lesbird.github.io/Screenshots/letterwizardsearch.png" alt="Letter Wizard Word Search" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id1551682313">Letter Wizard Word Search</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id1551682313">App Store</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id1327884310">
+          <img src="https://lesbird.github.io/Screenshots/levitarrescue.png" alt="Levitar Rescue" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id1327884310">Levitar Rescue</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id1327884310">App Store</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id1510419801">
+          <img src="https://lesbird.github.io/Screenshots/levitarvector3.png" alt="Levitar Vector 3" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id1510419801">Levitar Vector 3</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id1510419801">App Store</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id1390864442">
+          <img src="https://lesbird.github.io/Screenshots/physicsbox.png" alt="Physics Box" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id1390864442">Physics Box</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id1390864442">App Store</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id1080209122">
+          <img src="https://lesbird.github.io/Screenshots/rocksndiamonds.png" alt="Rocks'n'Diamonds" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id1080209122">Rocks'n'Diamonds</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id1080209122">App Store</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://apps.apple.com/us/app/id463239188">
+          <img src="https://lesbird.github.io/Screenshots/xvsofootball.png" alt="X vs O Football" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://apps.apple.com/us/app/id463239188">X vs O Football</a></h3>
+          <div class="card-links"><a class="pill solid" href="https://apps.apple.com/us/app/id463239188">App Store</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="section-head" style="margin-top:34px">
+      <span class="kicker">Downloads</span>
+      <h2 style="font-size:1.2rem">Ax Performance Test (Desktop)</h2>
+    </div>
+    <div class="linklist">
+      <div class="linkrow">
+        <span class="dot"></span>
+        <a href="https://lesbird.github.io/AxPerf.zip">Ax Performance Test</a>
+        <span>OS X x64 / Apple M1</span>
+      </div>
+      <div class="linkrow">
+        <span class="dot"></span>
+        <a href="https://lesbird.github.io/AxPerfM1Native.zip">Ax Performance Test</a>
+        <span>Apple M1 Native</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PC GAMES ===================== -->
+  <section id="pc">
+    <div class="section-head">
+      <span class="kicker">Windows</span>
+      <h2>PC Freeware Games</h2>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <a class="card-media" href="levitar3.html">
+          <img src="https://lesbird.github.io/levitar3/images/Image62.jpg" alt="Levitar 3D: Evolved" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="levitar3.html">Levitar 3D: Evolved</a></h3>
+          <div class="card-links">
+            <a class="pill solid" href="https://levitar3d.com">Website</a>
+            <a class="pill" href="levitar3.html">Details</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="eliminator3d.html">
+          <img src="https://lesbird.github.io/Eliminator3D/Images/Image94_640.jpg" alt="Eliminator 3D" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="eliminator3d.html">Eliminator 3D</a></h3>
+          <div class="card-links"><a class="pill" href="eliminator3d.html">Details</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="fueldepot3d.html">
+          <img src="https://lesbird.github.io/fueldepot3d/ScreenShots/Image1.jpg" alt="Fuel Depot 3D" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="fueldepot3d.html">Fuel Depot 3D</a></h3>
+          <div class="card-links"><a class="pill" href="fueldepot3d.html">Details</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="section-head" style="margin-top:40px">
+      <span class="kicker">Shipped Titles</span>
+      <h2>PC Retail Games</h2>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <a class="card-media" href="https://lesbird.github.io/kndoperationbest.html">
+          <img src="https://lesbird.github.io/images/knd_best.jpg" alt="Kids Next Door - Operation B.E.S.T." loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://lesbird.github.io/kndoperationbest.html">Kids Next Door — Operation B.E.S.T.</a></h3>
+          <div class="card-links">
+            <span class="pill">AWE Games</span>
+            <a class="pill" href="https://lesbird.github.io/kndoperationbest.html">Details</a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="linklist" style="margin-top:16px">
+      <div class="linkrow">
+        <span class="dot"></span>
+        <a href="https://en.wikipedia.org/wiki/Star_Trek:_The_Next_Generation:_Klingon_Honor_Guard">Klingon Honor Guard</a>
+        <span>MicroProse</span>
+      </div>
+      <div class="linkrow">
+        <span class="dot"></span>
+        <a href="https://www.mobygames.com/game/hot-wheels-mechanix">Hot Wheels Mechanix Racing</a>
+        <span>AWE Games</span>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:40px">
+      <span class="kicker">Retro</span>
+      <h2>Classic PC Games</h2>
+    </div>
+    <div class="linklist">
+      <div class="linkrow"><span class="dot"></span><a href="https://en.wikipedia.org/wiki/Corridor_7:_Alien_Invasion">Corridor 7: Alien Invasion</a><span>Capstone</span></div>
+      <div class="linkrow"><span class="dot"></span><a href="https://en.wikipedia.org/wiki/William_Shatner%27s_TekWar">William Shatner's TekWar</a></div>
+      <div class="linkrow"><span class="dot"></span><a href="https://en.wikipedia.org/wiki/Witchaven">Witchaven</a></div>
+      <div class="linkrow"><span class="dot"></span><a href="https://en.wikipedia.org/wiki/Witchaven_II:_Blood_Vengeance">Witchaven II: Blood Vengeance</a></div>
+    </div>
+  </section>
+
+  <!-- ===================== MAME ===================== -->
+  <section id="mame">
+    <div class="section-head">
+      <span class="kicker">Emulation</span>
+      <h2>MAME Related Projects</h2>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <a class="card-media" href="https://lesbird.github.io/mame4jetson.html">
+          <img src="https://lesbird.github.io/images/125208mame.jpg" alt="MAME for NVIDIA Jetson TX2" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://lesbird.github.io/mame4jetson.html">MAME for the NVIDIA Jetson TX2</a></h3>
+          <div class="card-links"><a class="pill" href="https://lesbird.github.io/mame4jetson.html">Details</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="https://lesbird.github.io/mame4apple.html">
+          <img src="https://lesbird.github.io/images/125208mame.jpg" alt="MAME for iOS devices" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://lesbird.github.io/mame4apple.html">MAME for iOS devices</a></h3>
+          <div class="card-links"><a class="pill" href="https://lesbird.github.io/mame4apple.html">Details</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== MAGIC LEAP ===================== -->
+  <section id="magicleap">
+    <div class="section-head">
+      <span class="kicker">Augmented Reality</span>
+      <h2>Magic Leap Projects</h2>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <a class="card-media" href="https://lesbird.github.io/universecreator.html">
+          <img src="https://lesbird.github.io/magicleap/screens/1.png" alt="Universe Creator" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://lesbird.github.io/universecreator.html">Universe Creator</a></h3>
+          <div class="card-links"><a class="pill" href="https://lesbird.github.io/universecreator.html">Details</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="https://lesbird.github.io/sattracker.html">
+          <img src="https://lesbird.github.io/magicleap/screens/STAR.png" alt="Satellite Tracker AR" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3><a href="https://lesbird.github.io/sattracker.html">Satellite Tracker AR</a></h3>
+          <div class="card-links"><a class="pill" href="https://lesbird.github.io/sattracker.html">Details</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== CLASSIC COMPUTERS ===================== -->
+  <section id="classic">
+    <div class="section-head">
+      <span class="kicker">Vintage Computing</span>
+      <h2>Classic Computers</h2>
+    </div>
+    <div class="linklist">
+      <div class="linkrow">
+        <span class="dot"></span>
+        <a href="https://sebhc.github.io/sebhc/">SEBHC</a>
+        <span>Society of Eight Bit Heath Computerists</span>
+      </div>
+    </div>
+    <a class="banner-card" href="https://lesbird.github.io/galacticomm.html">
+      <img src="https://lesbird.github.io/Galacticomm/galacticommbanner.jpg" alt="Galacticomm BBS Software" loading="lazy">
+      <div class="cap">Galacticomm BBS Software →</div>
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="mailto:lesbird65@gmail.com">Email</a>
+    <a href="https://sebhc.github.io/sebhc/" target="_blank" rel="noopener">SEBHC Classic Computers</a>
+    <a href="https://lesbird.github.io/capstone/index.html">CAPSTONE Software Archive</a>
+    <a href="https://lesbird.github.io/privacy.html">Privacy Policy</a>
+  </div>
+  <div class="meta">© Les Bird · The Game Projects · Last updated Mar 22, 2021</div>
+</footer>
 
 <div id="disqus_thread"></div>
 <script>
-
 /**
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
@@ -181,5 +562,4 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </body>
-
 </html>
