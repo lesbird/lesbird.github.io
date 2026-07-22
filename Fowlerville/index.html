@@ -443,7 +443,7 @@ function close() {
 }
 function show() {
   const p = photos[current];
-  lightboxImg.src = 'Pics/' + p.file;
+  lightboxImg.src = 'pics/' + p.file;
   lightboxImg.alt = p.cap;
   counter.textContent = p.section + ' — ' + (current + 1) + ' / ' + photos.length;
   caption.textContent = p.cap;
