@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fowlerville Farmhouse — 2.29 Acres</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #faf9f7;
+    color: #2b2b2b;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  header .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .key-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    background: #fff;
+    border: 1px solid #e3e0da;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+  }
+  .key-facts strong { font-size: 1.2rem; }
+
+  section.description {
+    background: #fff;
+    border: 1px solid #e3e0da;
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2rem;
+  }
+  section.description h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+  }
+  section.description p { margin-bottom: 1rem; }
+  section.description p:last-child { margin-bottom: 0; }
+
+  details.facts {
+    background: #fff;
+    border: 1px solid #e3e0da;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    margin-bottom: 2.5rem;
+  }
+  details.facts summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.15rem;
+    padding: 0.25rem 0;
+  }
+  details.facts[open] summary { margin-bottom: 0.75rem; }
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem 2rem;
+    padding-bottom: 0.75rem;
+  }
+  .facts-grid h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #8a7a5c;
+    margin-bottom: 0.35rem;
+  }
+  .facts-grid ul { list-style: none; }
+  .facts-grid li { padding: 0.1rem 0; font-size: 0.95rem; }
+
+  h2.gallery-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h3.section-title {
+    font-size: 1.2rem;
+    margin: 2rem 0 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #e3e0da;
+  }
+  h3.section-title span {
+    color: #999;
+    font-weight: 400;
+    font-size: 0.95rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+  }
+  .grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: zoom-in;
+    display: block;
+    background: #e8e5df;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 94vw;
+    max-height: 92vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  .lightbox .counter {
+    position: fixed;
+    top: 14px;
+    left: 20px;
+    color: #ccc;
+    font-size: 0.95rem;
+    user-select: none;
+  }
+  .lightbox .caption {
+    position: fixed;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #eee;
+    font-size: 0.95rem;
+    background: rgba(0,0,0,0.55);
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    max-width: 90vw;
+    text-align: center;
+    user-select: none;
+  }
+  .lightbox button {
+    position: fixed;
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: #fff;
+    font-size: 1.9rem;
+    line-height: 1;
+    padding: 0.55rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .lightbox button:hover { background: rgba(255,255,255,0.28); }
+  .lightbox .close { top: 12px; right: 16px; }
+  .lightbox .prev { left: 16px; top: 50%; transform: translateY(-50%); }
+  .lightbox .next { right: 16px; top: 50%; transform: translateY(-50%); }
+
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; }
+    .lightbox .prev, .lightbox .next { font-size: 1.4rem; padding: 0.45rem 0.7rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>1900 Farmhouse on 2.29 Acres — Fowlerville, MI</h1>
+    <div class="subtitle">Listed 7/10/2026 &middot; $375,000 &middot; $181/sqft</div>
+  </header>
+
+  <div class="key-facts">
+    <span><strong>3</strong> beds</span>
+    <span><strong>2.5</strong> baths</span>
+    <span><strong>2,072</strong> sqft</span>
+    <span><strong>2.29</strong> acres</span>
+    <span><strong>1900</strong> built</span>
+    <span><strong>2024</strong> major remodel</span>
+  </div>
+
+  <section class="description">
+    <h2>What's special</h2>
+    <p>Welcome to this beautifully maintained 1900 farmhouse offering over 2,000 sq. ft. of living space, plus a full unfinished basement, situated on 2.3 scenic acres. Enjoy peaceful country living with a tree farm across the road and expansive farmland directly behind the property, providing beautiful views and added privacy.</p>
+    <p>This move-in-ready home features 3 bedrooms, 2.5 bathrooms, spacious living areas, abundant storage, and a cozy gas fireplace. The kitchen was extensively remodeled in 2024 (excluding the flooring) and includes newer black stainless refrigerator and dishwasher (2024), natural gas range, microwave, washer, dryer, and hot tub&mdash;all included with the sale. The primary bathroom was remodeled in 2024, the half bath was updated in 2020, and many additional rooms have been freshly painted.</p>
+    <p>Numerous major updates provide peace of mind, including a brand-new central A/C (2026), new water softener (2025), generator hookup (2025), updated attic insulation, updated plumbing and electrical, and newer upstairs windows (2018). The well has been recently inspected, the septic was pumped in 2025, and the dry basement has no known history of leaks or flooding.</p>
+    <p>Outside, you'll find a patio, bonfire pit, and two versatile outbuildings. The impressive two-story barn offers exceptional storage and workspace, while the second two-story barn was re-sided in 2020 and features a custom-built bar and entertainment area with its own wall-mounted A/C unit&mdash;perfect for gatherings, hobbies, or a home workshop.</p>
+    <p>If you've been looking for a property that combines historic farmhouse charm with modern updates, functional outbuildings, and a picturesque country setting, this one is ready to welcome you home.</p>
+  </section>
+
+  <details class="facts">
+    <summary>Facts &amp; features</summary>
+    <div class="facts-grid">
+      <div>
+        <h3>Interior</h3>
+        <ul>
+          <li>Bedrooms: 3 &middot; Bathrooms: 3 (2 full, 1 half)</li>
+          <li>Primary bedroom: 11 &times; 12 (second floor)</li>
+          <li>Bedroom: 15 &times; 9 (second floor)</li>
+          <li>Bedroom: 10 &times; 12 (second floor)</li>
+          <li>Living room: 15 &times; 23 (entry)</li>
+          <li>Dining room: 18 &times; 15 (entry)</li>
+          <li>Kitchen: 15 &times; 15 (entry)</li>
+          <li>Total interior livable area: 2,072 sqft</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Systems &amp; appliances</h3>
+        <ul>
+          <li>Heating: Forced air, natural gas</li>
+          <li>Cooling: Ceiling fans, central air</li>
+          <li>Appliances: Dishwasher, free-standing refrigerator, gas cooktop, microwave</li>
+          <li>Fireplace: Family room, gas</li>
+          <li>Basement: Unfinished</li>
+          <li>High-speed internet</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Property</h3>
+        <ul>
+          <li>Lot: 2.29 acres, corner lot</li>
+          <li>Lot dimensions: 406 &times; 215 &times; 414 &times; 274</li>
+          <li>Parking: No garage</li>
+          <li>Levels: Two</li>
+          <li>Patio &amp; porch: Covered, porch</li>
+          <li>Exterior: Spa hot tub</li>
+          <li>Additional structures: Barns, outbuildings, pole barn</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Construction</h3>
+        <ul>
+          <li>Home type: Single family</li>
+          <li>Style: Colonial / Farmhouse</li>
+          <li>Year built: 1900 &middot; Major remodel: 2024</li>
+          <li>Materials: Aluminum siding</li>
+          <li>Foundation: Basement, stone, sump pump</li>
+          <li>Roof: Asphalt</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Utilities &amp; community</h3>
+        <ul>
+          <li>Sewer: Septic tank</li>
+          <li>Water: Well</li>
+          <li>HOA: No</li>
+          <li>Region: Fowlerville</li>
+          <li>Parcel number: 0535100037</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Financial &amp; listing</h3>
+        <ul>
+          <li>Price: $375,000 ($181/sqft)</li>
+          <li>Tax assessed value: $109,914</li>
+          <li>Annual tax amount: $2,979</li>
+          <li>Date on market: 7/10/2026</li>
+          <li>Listing terms: Cash, conventional</li>
+          <li>Price history: Sold $185,000 (9/25/2006); listed $269,900 (7/3/2018), reduced to $259,900, removed 9/4/2018</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <h2 class="gallery-title">Photos</h2>
+  <div id="gallery"></div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <div class="counter" id="counter"></div>
+  <button class="close" aria-label="Close">&times;</button>
+  <button class="prev" aria-label="Previous">&#8249;</button>
+  <button class="next" aria-label="Next">&#8250;</button>
+  <img id="lightbox-img" alt="Property photo enlarged">
+  <div class="caption" id="caption"></div>
+</div>
+
+<script>
+const sections = [
+  { title: "House Exterior", photos: [
+    ["4ab488ab64d6c307736db10e40807d9f-cc_ft_768.png", "Front view of the farmhouse"],
+    ["0b5807ad80ace7642c5e360a9cdaa4d5-cc_ft_768.png", "Front with windmill and big lawn"],
+    ["d6462a680e69ebde6d8b138fdfbc3934-cc_ft_768.png", "Front with windmill and shade trees"],
+    ["6ea0f91b6e791b3e4c2227dd06559e8e-cc_ft_1536.png", "Front porch and side of the house"],
+    ["24a84ffb5b9dd5a9157e769c58a843a7-cc_ft_1536.png", "Side with brick chimney and porch"],
+    ["d9907190c974d87605cf0ce069f162be-cc_ft_1536.png", "Side with porch steps and landscaping"],
+    ["03efeee1fd9851e5ce0dd1b193283fac-cc_ft_768.png", "Rear view with brick chimney"],
+    ["a47d5f824049de3eaaf54183ae6789f3-cc_ft_768.png", "Rear view with lawn"],
+    ["4df1e80285155babb03f55f6cf0da7ca-cc_ft_768.png", "Rear with covered porch"],
+    ["d219f73b102eeddd3939ebb77766a1a0-cc_ft_768.png", "Rear covered patio deck"],
+    ["83cee86e2e9f95c44fff33086743050b-cc_ft_1536.png", "Back of house with hot tub"],
+    ["fac33e639a417cd525befc33c576eeb0-cc_ft_768.png", "Rear aerial with hot tub"],
+    ["4d62ed9ad8ee3b99e51b2c33a2a47816-cc_ft_768.png", "Elevated view with windmill"],
+  ]},
+  { title: "Kitchen", photos: [
+    ["acd77baaa29225984853a770268a0c79-cc_ft_1536.png", "Remodeled kitchen with gas range"],
+    ["ccf3ef24dd68bc982ae4f6dd2fa3fdaa-cc_ft_1536.png", "Island with granite top and wine rack"],
+    ["853d620bdfa3b3a9ea3f6a93a4915ac8-cc_ft_768.png", "Island and stone backsplash"],
+    ["000e149790590a7b73561c2f20b4a745-cc_ft_768.png", "Kitchen with dark cabinets"],
+    ["d5683d4a381c2136c05ae6e58e107fa8-cc_ft_768.png", "Black sink and refrigerator"],
+    ["f2aa6885bd3ed739fe39719ef9c4a929-cc_ft_768.png", "Black stove and island cart"],
+  ]},
+  { title: "Dining", photos: [
+    ["5b01c3edf93a628bb3bcec437ffc754c-cc_ft_768.png", "Dining room with hutch"],
+    ["4323e61ebd22e08047a7eba0eeefa0c8-cc_ft_768.png", "Dining area with table and bench"],
+    ["ad1a08e12e11d0c663e2f2dd862d1869-cc_ft_768.png", "Breakfast nook with barn views"],
+  ]},
+  { title: "Living Rooms", photos: [
+    ["0d63a31b0dead285768ef8a741b46ab5-cc_ft_1536.png", "Living room with brick fireplace"],
+    ["c5ebe2d492bdc313342194b213ae1803-cc_ft_1536.png", "Fireplace insert, mantel and TV"],
+    ["12b0a503767a3a8335729112247d55d6-cc_ft_768.png", "Living room with piano and wood stove"],
+    ["1782a9b0060d3eb60d7ed0d1b514ea7a-cc_ft_768.png", "Bookcase and pellet stove"],
+  ]},
+  { title: "Bedrooms", photos: [
+    ["889cd7044d43663eca4fcedfbde4400b-cc_ft_1536.png", "Blue bedroom with en-suite shower"],
+    ["2c8dbb04b3b064d1a7926033f70a368e-cc_ft_768.png", "Blue bedroom with tree views"],
+    ["e42f11795db5a32da398429d7ca011c5-cc_ft_768.png", "Blue bedroom with ceiling fan"],
+    ["c6070509f91ee4d8e99ba17120d79d8d-cc_ft_768.png", "Teal bedroom with double closets"],
+    ["e850ca5b6d0259e3a774675161dd35fa-cc_ft_1536.png", "Green bedroom used as office"],
+  ]},
+  { title: "Bathrooms", photos: [
+    ["e17e41c5b93bed58758cfcb3858923d3-cc_ft_1536.png", "Bathroom with double vanity"],
+    ["741d17e42d03f145b91192bfab58596d-cc_ft_768.png", "Tiled shower with mosaic niche"],
+    ["3c486f7385284abd1cf9aeab7ac24005-cc_ft_768.png", "Vanity with oak cabinet"],
+    ["145af0f0dbdd31b650059ee24e81527c-cc_ft_768.png", "Bathroom with wall sink"],
+    ["997eb92d24dccc386449b65aae42d454-cc_ft_768.png", "White shower stall"],
+  ]},
+  { title: "Entry & Hallways", photos: [
+    ["7cb7eb02c0ceb452fb1a3d85776542cc-cc_ft_1536.png", "Foyer with wooden staircase"],
+    ["380c9c93e92b3140a287859609ddbad7-cc_ft_1536.png", "Hallway with sliding barn door"],
+  ]},
+  { title: "Basement", photos: [
+    ["89556f18213aef695a60b8cd38f9b93d-cc_ft_768.png", "Stone basement with furnace"],
+    ["d6ac686b723154e8ae8678441be02ab5-cc_ft_1536.png", "Basement with wood stove and storage"],
+    ["e782957f9147b10c76f0c0fc975bf27a-cc_ft_768.png", "Basement laundry with washer and dryer"],
+  ]},
+  { title: "Barns & Outbuildings — Outside", photos: [
+    ["a236c8a04791c2b69e6223f8490a9dec-cc_ft_1536.png", "Large red gambrel barn"],
+    ["775513ad9b5f1bdceb5a6d810b8e06a2-cc_ft_768.png", "Red barn and weathered gray barn"],
+    ["c8999d4e6127e69c099ccec1d531eeeb-cc_ft_768.png", "Red barn and small gambrel shed"],
+    ["d847352a59e59a37a38d90b78aa062cf-cc_ft_768.png", "Red barn and gray outbuilding"],
+    ["80a6b657d28014c03684981453c9a7eb-cc_ft_768.png", "Aerial of red barn and outbuilding"],
+    ["e9e632c62e9bc48fdeeea37bf8146b54-cc_ft_1536.png", "Aerial of red barn with house behind"],
+  ]},
+  { title: "Barns & Outbuildings — Inside", photos: [
+    ["28e4b74bc655fdc9b955c30dc62ec68a-cc_ft_1536.png", "Custom bar with stools and dartboard"],
+    ["6e615da51e3c112b9c0f9f08a38cd698-cc_ft_768.png", "Bar area with pool table"],
+    ["cc1e920eefa70c0d30d13b9a5d48ed28-cc_ft_768.png", "Bar entertainment area"],
+    ["c05fe26f2671ef023cb5b58bb6d87e23-cc_ft_768.png", "Pool table game room"],
+    ["967e9bd7d253c2b184bd9947122362df-cc_ft_768.png", "Rustic barn room with pass-through"],
+    ["27a51525d720971ac942b1c9f13a25c2-cc_ft_1536.png", "Workshop with shelving and pegboard"],
+    ["bce3ba614f8a506bdb3f2c3759bf3124-cc_ft_1536.png", "Workshop with workbench and vises"],
+    ["9cfa621cece6ce02480150ce21ba3503-cc_ft_768.png", "Utility room with sink"],
+    ["b2321a4ed087b9dfbba4c1541ac2735a-cc_ft_768.png", "Storage room with wood shelves"],
+    ["048d7aef4f0bc790763131b5d15ea050-cc_ft_768.png", "Hayloft with timber trusses"],
+    ["bfe7ed48b296c1b1c636587f9f0c6357-cc_ft_1536.png", "Vast hayloft with truss framing"],
+    ["eed273a8928e3156bf1dc352bfe330df-cc_ft_768.png", "Hayloft timber framing"],
+    ["78e858e940d53874eddb19d937ab5294-cc_ft_768.png", "Hayloft with open doors"],
+    ["1a83bc2b84c9d1896b86cecbe6976927-cc_ft_1536.png", "Barn lower level, concrete floor"],
+    ["496168de5ccb1b7d4a01dd8f415f882e-cc_ft_768.png", "Barn lower level, post-and-beam"],
+    ["a37f2e185f30186196a4ede3945ac88e-cc_ft_768.png", "Lower level with ATV storage"],
+    ["c1a167f3bb2390905e985214d8642614-cc_ft_768.png", "Lower level with stored equipment"],
+    ["ced7d626f206afc563efab7fa620dba7-cc_ft_1536.png", "Lower level with stalls and beams"],
+  ]},
+  { title: "Land & Aerial Views", photos: [
+    ["55c5726d1252110ecfb7d534decf5ddb-cc_ft_768.png", "Overhead aerial of property layout"],
+    ["07bf59c51bd4b759b7882ade99b7ddaa-cc_ft_1536.png", "Aerial of property and fields"],
+    ["36922bd57d6a0eb6c68bff93360a22bb-cc_ft_1536.png", "Aerial of house, barn and windmill"],
+    ["88ec9ea373ac591b69db2c3b677b1179-cc_ft_1536.png", "Wide drone view of the property"],
+    ["8cfd251e911c8caada2b8fa9e2698512-cc_ft_768.png", "Aerial of fields and barns"],
+    ["9bbb5749c5ea4cf3632c6e0e84ebf07d-cc_ft_1536.png", "Aerial of windmill and driveway"],
+    ["dde91d84ffd8fd31676d532f1df07485-cc_ft_768.png", "Aerial of house, barn and fields"],
+    ["7eaf700a17b2fe40d595263debadd8a4-cc_ft_768.png", "Open mowed field with tree line"],
+    ["2009c358403e6aeb8928e6960d16d25b-cc_ft_768.png", "Hot tub overlooking the lawn"],
+  ]},
+];
+
+// Flat list for the lightbox
+const photos = sections.flatMap(s => s.photos.map(([file, cap]) => ({ file, cap, section: s.title })));
+
+const gallery = document.getElementById('gallery');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const counter = document.getElementById('counter');
+const caption = document.getElementById('caption');
+let current = 0;
+
+let index = 0;
+sections.forEach(section => {
+  const h = document.createElement('h3');
+  h.className = 'section-title';
+  h.innerHTML = section.title + ' <span>(' + section.photos.length + ')</span>';
+  gallery.appendChild(h);
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  section.photos.forEach(([file, cap]) => {
+    const i = index++;
+    const img = document.createElement('img');
+    img.src = 'Pics/' + file;
+    img.alt = cap;
+    img.title = cap;
+    img.loading = 'lazy';
+    img.addEventListener('click', () => open(i));
+    grid.appendChild(img);
+  });
+  gallery.appendChild(grid);
+});
+
+function open(i) {
+  current = i;
+  show();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function close() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function show() {
+  const p = photos[current];
+  lightboxImg.src = 'Pics/' + p.file;
+  lightboxImg.alt = p.cap;
+  counter.textContent = p.section + ' — ' + (current + 1) + ' / ' + photos.length;
+  caption.textContent = p.cap;
+}
+function step(d) {
+  current = (current + d + photos.length) % photos.length;
+  show();
+}
+
+lightbox.querySelector('.close').addEventListener('click', close);
+lightbox.querySelector('.prev').addEventListener('click', e => { e.stopPropagation(); step(-1); });
+lightbox.querySelector('.next').addEventListener('click', e => { e.stopPropagation(); step(1); });
+lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
+
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') close();
+  else if (e.key === 'ArrowLeft') step(-1);
+  else if (e.key === 'ArrowRight') step(1);
+});
+
+// Swipe support for touch devices
+let touchX = null;
+lightbox.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+lightbox.addEventListener('touchend', e => {
+  if (touchX === null) return;
+  const dx = e.changedTouches[0].clientX - touchX;
+  if (Math.abs(dx) > 50) step(dx > 0 ? -1 : 1);
+  touchX = null;
+}, { passive: true });
+</script>
+</body>
+</html>
